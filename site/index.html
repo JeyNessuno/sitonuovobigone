@@ -5,10 +5,11 @@
 <link rel="icon" href="img/logo.png"><link rel="stylesheet" href="style.css"></head><body>
 <div class="bg" aria-hidden="true"><i data-s="primavera" style="background-image:url(img/seasons/spring.jpg)"></i><i data-s="estate" style="background-image:url(img/seasons/summer.jpg)"></i><i data-s="autunno" style="background-image:url(img/seasons/fall.jpg)"></i><i data-s="inverno" style="background-image:url(img/seasons/winter.jpg)"></i></div>
 <header><a href="#home"><img src="img/logo.png" alt="Frutteria Bigone"></a>
-<nav><a href="#storia">Storia</a><a href="#team">Team</a><a href="#frutti">Frutti</a><a href="#blog">Blog</a><a href="#contatti">Contatti</a></nav>
-<div class="seasons" role="group" aria-label="Scegli la stagione"><button id="oggi" type="button">Oggi</button><button data-s="primavera">Primavera</button><button data-s="estate">Estate</button><button data-s="autunno">Autunno</button><button data-s="inverno">Inverno</button></div></header>
+<button id="bg" class="burger" type="button" aria-expanded="false" aria-controls="mn">☰ <span id="bl"></span></button>
+<div id="mn" class="menu"><nav><a href="#storia">Storia</a><a href="#team">Team</a><a href="#frutti">Frutti</a><a href="#blog">Blog</a><a href="#contatti">Contatti</a></nav>
+<div class="seasons" role="group" aria-label="Scegli la stagione"><button id="oggi" type="button">Oggi</button><button data-s="primavera">Primavera</button><button data-s="estate">Estate</button><button data-s="autunno">Autunno</button><button data-s="inverno">Inverno</button></div></div></header>
 
-<div class="hero" id="home"><div><h1>Frutteria Bigone</h1><p>Vendita diretta frutta e verdura<br>Vignola (MO) · Basse di Vignola</p>
+<div class="hero" id="home"><div><h1><img src="img/titolo.png" alt="Frutteria Bigone"></h1><p>Vendita diretta frutta e verdura<br>Vignola (MO) · Basse di Vignola</p>
 <button class="btn" id="play" type="button">▶ Introduzione alla Frutteria Bigone</button></div></div>
 
 <dialog id="vd"><button class="x" type="button" aria-label="Chiudi">×</button><h3>Introduzione alla Frutteria Bigone</h3><video id="vid" controls preload="none" playsinline poster="media/poster.jpg"></video></dialog>
@@ -41,7 +42,7 @@
 <div class="card" data-f="Piccoli frutti"><img src="img/piccoli-frutti.jpg" alt="Piccoli frutti" loading="lazy"><div><h3>Piccoli frutti</h3><p>I più piccoli, ma anche i più importanti per l'alimentazione, oggi li chiamano super food: mirtilli americani, mirtilli rosa, ribes, lamponi, more.</p></div></div>
 <div class="card" data-f="Pere"><img src="img/pere-invernali.jpg" alt="Pere invernali" loading="lazy"><div><h3>Pere invernali</h3><p>Queste sono le ultime pere che raccogliamo, che si riescono a conservare a lungo se tenute in frigo. Sono le pere più dolci: William, Abate Fetel, Conference, Kaiser Alexander.</p></div></div>
 <div class="card" data-f="Kaki"><div class="ph">🍊</div><div><h3>Kaki</h3><p>Loti di Romagna e Rojo Brillante, i kaki tradizionali che si mangiano con il cucchiaino (da assaggiare accompagnati agli amaretti)!! Solo su prenotazione!</p></div></div>
-<div class="card" data-f="Kiwi"><div class="ph">🥝</div><div><h3>Kiwi</h3><p>L'actinidia (il kiwi verde classico) è un frutto invernale, ricco di vitamina C, dolce.</p></div></div>
+<div class="card" data-f="Mele"><div class="ph">🍎</div><div><h3>Mele</h3><p>Le mele sono un frutto estivo e invernale, ricche di fibre e vitamina C.</p></div></div>
 <div class="card" data-f="Orto"><img src="img/orto.jpg" alt="Ortaggi dell'orto" loading="lazy"><div><h3>Orto</h3><p>Abbiamo sempre avuto un piccolo orto per il nostro fabbisogno familiare, da quest'anno vorremmo portare anche sulle vostre tavole le nostre verdure preferite!!</p></div></div>
 </div></div></section>
 
@@ -174,13 +175,16 @@ function csv(t){const r=[];let row=[],c='',q=false;for(let i=0;i<t.length;i++){c
 let months=[mese()],label=NOMI[mese()-1];
 function show(){const n=name=>{const f=FRUTTA.find(x=>x[0].toLowerCase()==name.toLowerCase());return f&&months.some(m=>inRange(m,f[1],f[2]))};
  document.querySelectorAll('[data-f]').forEach(c=>{const y=n(c.dataset.f);c.classList.toggle('off',!y);c.style.order=y?0:1});
- $('#sn').textContent=cap(label)}
+ $('#sn').textContent=cap(label);$('#bl').textContent=cap(B.dataset.s)}
 function season(s,click){B.dataset.s=s;
  document.querySelectorAll('.bg i').forEach(e=>e.classList.toggle('on',e.dataset.s==s));
  document.querySelectorAll('.seasons button').forEach(e=>e.classList.toggle('on',e.dataset.s==s));
  if(click){months=MESI[s];label=s}else{months=[mese()];label=NOMI[mese()-1]}show()}
 document.querySelectorAll('.seasons button').forEach(b=>b.onclick=()=>season(b.dataset.s,true));
 $('#oggi').onclick=()=>season(cur());
+const H=$('header'),shut=()=>{H.classList.remove('open');$('#bg').setAttribute('aria-expanded',false)};
+$('#bg').onclick=()=>$('#bg').setAttribute('aria-expanded',H.classList.toggle('open'));
+document.querySelectorAll('#mn a,#mn button').forEach(e=>e.addEventListener('click',shut));
 season(cur());
 fetch(csvUrl('Frutta')).then(r=>r.ok?r.text():Promise.reject()).then(t=>{
  const rows=csv(t).slice(1).map(r=>[r[0].trim(),+r[1],+r[2]]).filter(r=>r[0]&&r[1]>=1&&r[1]<=12&&r[2]>=1&&r[2]<=12);
