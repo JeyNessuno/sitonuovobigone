@@ -1,0 +1,49 @@
+:root{--ink:#2b2525;--acc:#7a8f5a;--panel:rgba(255,255,255,.93)}
+body[data-s=primavera]{--acc:#5e8f4a}body[data-s=estate]{--acc:#b8861b}
+body[data-s=autunno]{--acc:#b4581f}body[data-s=inverno]{--acc:#4f6b84}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:17px/1.65 Georgia,'Times New Roman',serif;color:var(--ink);background:#222}
+h1,h2,h3,nav,button,.btn{font-family:'Helvetica Neue',Arial,sans-serif}
+.bg{position:fixed;inset:0;z-index:-1;background:#222}
+.bg i{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s}.bg i.on{opacity:1}
+.bg::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.22)}
+h2{font-size:1.9rem;margin:0 0 .3em;letter-spacing:.06em;text-transform:uppercase;padding-bottom:.35em;border-bottom:3px solid var(--acc);display:inline-block}
+h3{margin:.2em 0}a{color:var(--ink)}img{max-width:100%;display:block}
+header{position:sticky;top:0;z-index:9;background:var(--panel);backdrop-filter:blur(6px);display:flex;align-items:center;gap:1rem;flex-wrap:wrap;justify-content:space-between;padding:.4rem 1.2rem}
+header>a img{height:52px}
+nav a{margin-right:1rem;text-decoration:none;font-weight:600;font-size:.85rem;text-transform:uppercase;letter-spacing:.06em}
+nav a:hover{color:var(--acc)}
+.seasons{display:flex;gap:.3rem}.seasons button{border:1px solid #bbb;background:#fff;border-radius:2rem;padding:.3rem .8rem;font-size:.8rem;cursor:pointer;color:var(--ink)}
+.seasons button.on{background:var(--acc);border-color:var(--acc);color:#fff}
+.hero{min-height:82vh;display:grid;place-items:center;text-align:center;color:#fff;padding:2rem;text-shadow:0 2px 14px rgba(0,0,0,.6)}
+.hero h1{font-size:clamp(2.4rem,7vw,4.6rem);margin:0;letter-spacing:.1em;text-transform:uppercase}
+.hero p{font-size:1.25rem;margin:.5rem 0 1.6rem}
+.btn{display:inline-block;background:#fff;color:var(--ink);border:0;padding:.75rem 1.6rem;border-radius:2rem;text-decoration:none;font-weight:700;font-size:1rem;cursor:pointer;text-shadow:none}
+.btn:hover{background:var(--acc);color:#fff}
+section{padding:1.5rem}
+.w{max-width:1000px;margin:auto;background:var(--panel);border-radius:16px;padding:2.5rem}
+.sub{font-size:1.1rem;margin:.5rem 0 1.8rem;font-style:italic}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center}
+.two img{border-radius:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1.3rem}
+.card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 3px 12px rgba(0,0,0,.14);position:relative;transition:opacity .4s,filter .4s}
+.card img,.ph{aspect-ratio:1;object-fit:cover;width:100%}.ph{display:grid;place-items:center;font-size:4rem;background:#eee}
+.card div{padding:1rem}.card p{margin:.3rem 0 0;font-size:.95rem}
+.card.off{opacity:.5;filter:grayscale(.6)}
+.card[data-in]:not(.off)::after{content:"Di stagione";position:absolute;top:.6rem;left:.6rem;background:var(--acc);color:#fff;font:700 .7rem 'Helvetica Neue',Arial,sans-serif;text-transform:uppercase;letter-spacing:.06em;padding:.25rem .6rem;border-radius:1rem}
+.team .card{text-align:center}.team .card div{padding:.8rem}.team p{font-style:italic;margin:0}
+details{background:#fff;border-left:5px solid var(--acc);border-radius:8px;margin:1rem 0;padding:.8rem 1.2rem;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+summary{cursor:pointer;font:700 1.05rem 'Helvetica Neue',Arial,sans-serif}
+summary small{color:#777;font-weight:400;margin-left:.6rem}
+details .imgs{display:flex;gap:.6rem;flex-wrap:wrap;margin:.8rem 0}details .imgs img{height:160px;border-radius:8px;width:auto}
+table{border-collapse:collapse;width:100%}td{padding:.35rem 0;border-bottom:1px dotted #bbb}td:last-child{text-align:right;white-space:nowrap;font-weight:700}
+.note{font-size:.85rem;opacity:.8}
+footer{background:rgba(20,16,16,.82);color:#fff;padding:2.5rem 1.5rem;text-align:center;margin-top:1.5rem}footer a{color:#fff}
+footer>img{height:84px;margin:auto;background:#fff;border-radius:50%;padding:4px}
+footer .soc img{display:inline;height:34px;margin:.5rem .3rem}
+dialog{border:0;border-radius:14px;padding:1rem;width:min(960px,94vw);background:#111;color:#fff}dialog::backdrop{background:rgba(0,0,0,.7)}
+dialog h3{margin:0 2rem .6rem 0}dialog video{width:100%;max-height:75vh;background:#000;border-radius:8px}
+dialog .x{position:absolute;top:.4rem;right:.7rem;background:none;border:0;color:#fff;font-size:2rem;cursor:pointer}
+@media(max-width:700px){.two{grid-template-columns:1fr}.w{padding:1.4rem}nav{display:none}header>a img{height:42px}}
+details[hidden]{display:none}
+.btn.more{display:block;margin:1.2rem auto 0;background:var(--acc);color:#fff}
