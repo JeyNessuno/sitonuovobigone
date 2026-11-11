@@ -1,207 +1,105 @@
 <!DOCTYPE html>
 <html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Frutteria Bigone – Vendita diretta frutta e verdura, Vignola (MO)</title>
-<meta name="description" content="Azienda agricola a conduzione familiare a Vignola: ciliegie, pere, piccoli frutti, kaki, kiwi e orto in vendita diretta.">
-<link rel="icon" href="img/logo.png"><link rel="stylesheet" href="style.css"></head><body>
-<div class="bg" aria-hidden="true"><i data-s="primavera" style="background-image:url(img/seasons/spring.jpg)"></i><i data-s="estate" style="background-image:url(img/seasons/summer.jpg)"></i><i data-s="autunno" style="background-image:url(img/seasons/fall.jpg)"></i><i data-s="inverno" style="background-image:url(img/seasons/winter.jpg)"></i></div>
-<header><a href="#home"><img src="img/logo.png" alt="Frutteria Bigone"></a>
-<button id="bg" class="burger" type="button" aria-expanded="false" aria-controls="mn">☰ <span id="bl"></span></button>
-<div id="mn" class="menu"><nav><a href="#storia">Storia</a><a href="#team">Team</a><a href="#frutti">Frutti</a><a href="#blog">Blog</a><a href="#contatti">Contatti</a></nav>
-<div class="seasons" role="group" aria-label="Scegli la stagione"><button id="oggi" type="button">Oggi</button><button data-s="primavera">Primavera</button><button data-s="estate">Estate</button><button data-s="autunno">Autunno</button><button data-s="inverno">Inverno</button></div></div></header>
+<title>Frutteria Bigone – Il banchetto della frutta, Vignola (MO)</title>
+<meta name="description" content="Il banchetto della frutta di casa Bigone a Vignola (MO): self-service, sempre aperto. Scopri cosa c'è di stagione.">
+<meta property="og:title" content="Frutteria Bigone – Il banchetto della frutta, Vignola">
+<meta property="og:description" content="Self-service, sempre aperto.">
+<meta property="og:image" content="img/ciliegie.jpg">
+<link rel="icon" href="img/logo.png"><link rel="stylesheet" href="style.css"></head><body data-s="">
 
-<div class="hero" id="home"><div><h1><img src="img/titolo.png" alt="Frutteria Bigone"></h1><p>Vendita diretta frutta e verdura<br>Vignola (MO) · Basse di Vignola</p>
-<button class="btn" id="play" type="button">▶ Introduzione alla Frutteria Bigone</button></div></div>
+<header><a href="#home"><img src="img/logo.png" alt="Frutteria Bigone"></a>
+<button id="bg" class="burger" type="button" aria-expanded="false" aria-controls="mn">☰ Menu</button>
+<nav id="mn"><a href="#dove">Dove e quando</a><a href="#frutta">Frutta</a><a href="#novita">Novità</a><a href="#storia">Storia</a>
+<a class="ig" href="https://ig.me/m/_frutteria_bigone">Instagram</a></nav></header>
+
+<div class="hero" id="home"><div>
+<h1><img src="img/titolo.png" alt="Frutteria Bigone"></h1>
+<p class="tag">Il banchetto della frutta di casa Bigone, a Vignola.</p>
+<p class="chip" id="ora"></p>
+<p><a class="btn" href="https://maps.app.goo.gl/VXBxzUMq6dUhdws88" target="_blank" rel="noopener">Come arrivare</a> <a class="btn ghost" href="#frutta">Cosa c'è ora</a></p>
+</div></div>
+
+<section id="dove"><div class="w two"><div><h2>Dove e quando</h2>
+<p><strong>Via Brodano 16, Vignola (MO) 41058</strong><br>Basse di Vignola, a casa nostra.</p>
+<p>Il banchetto è <strong>self-service e sempre aperto</strong>: passate quando volete, la frutta di stagione vi aspetta.</p>
+<p><a class="btn dark" href="https://maps.app.goo.gl/VXBxzUMq6dUhdws88" target="_blank" rel="noopener">Apri in Maps</a>
+<a class="btn dark" href="https://ig.me/m/_frutteria_bigone"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg> Scrivici su Instagram</a></p></div>
+<iframe class="map" title="Mappa: Frutteria Bigone" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1423.0372583789176!2d11.025185945314687!3d44.493139912635996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477fdf756a911983%3A0x1f0b673e33c49472!2sFrutteria%20Bigone!5e0!3m2!1sen!2sit!4v1794385668316!5m2!1sen!2sit" style="border:0" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+</div></section>
+
+<section id="frutta"><div class="w"><h2>Frutta di stagione</h2>
+<p class="sub" id="sn"></p>
+<div class="seasons" role="group" aria-label="Scegli la stagione"><button id="oggi" type="button">Oggi</button><button data-s="primavera">Primavera</button><button data-s="estate">Estate</button><button data-s="autunno">Autunno</button><button data-s="inverno">Inverno</button></div>
+<ul class="list" id="frutti"></ul>
+<div id="orto" hidden><h3>Dall'orto</h3><ul class="list small" id="verdure"></ul></div>
+</div></section>
+
+<section id="novita"><span id="blog"></span><div class="w"><h2>Novità</h2><p class="sub">Eventi, offerte e racconti dal campo</p>
+<div id="posts"></div><p><a class="btn dark" href="novita/">Tutte le novità</a></p></div></section>
+
+<section id="storia"><div class="w"><h2>La casa Bigone</h2>
+<div class="two"><div>
+<p>Siamo un'azienda agricola a conduzione familiare, contadini da diverse generazioni: la famiglia di nostro nonno Franco già possedeva un piccolo fondo. Nel 1989 lui e i nostri genitori hanno acquistato la casa con la terra che ancora oggi coltiviamo. La casa si è sempre chiamata <strong>Bigone</strong>, ed è da lei che prende il nome la nostra frutteria.</p>
+<p>Dal 2013 siamo la Società Agricola Bigone: produciamo piccoli e grandi frutti e un piccolo orto, con <strong>lotta integrata avanzata</strong> (usiamo i prodotti chimici solo quando c'è una vera necessità, mai a priori), perché crediamo che l'agricoltura debba essere il più possibile sostenibile. Siamo soci della Cooperativa Agrintesa e da qualche anno vendiamo direttamente anche qui, al banchetto.</p>
+<p><em>Lia e Rossella</em></p>
+<button class="btn dark" id="play" type="button">▶ Introduzione alla Frutteria Bigone</button></div>
+<img src="img/noi.jpg" alt="Noi della Frutteria Bigone durante la raccolta" loading="lazy"></div>
+
+<div class="stag" aria-label="La casa nelle quattro stagioni">
+<figure data-s="primavera"><img src="img/seasons/spring.jpg" alt="La casa in primavera" loading="lazy"><figcaption>Primavera</figcaption></figure>
+<figure data-s="estate"><img src="img/seasons/summer.jpg" alt="La casa in estate" loading="lazy"><figcaption>Estate</figcaption></figure>
+<figure data-s="autunno"><img src="img/seasons/fall.jpg" alt="La casa in autunno" loading="lazy"><figcaption>Autunno</figcaption></figure>
+<figure data-s="inverno"><img src="img/seasons/winter.jpg" alt="La casa in inverno" loading="lazy"><figcaption>Inverno</figcaption></figure></div>
+
+<div class="team">
+<figure><img src="img/fiore.jpg" alt="Fiore" loading="lazy"><figcaption>Fiore<small>Il Capo</small></figcaption></figure>
+<figure><img src="img/robert.jpg" alt="Robert" loading="lazy"><figcaption>Robert<small>Il Tuttofare</small></figcaption></figure>
+<figure><img src="img/lia.jpg" alt="Lia" loading="lazy"><figcaption>Lia<small>Il legale rappresentante</small></figcaption></figure>
+<figure><img src="img/rossy.jpg" alt="Rossy" loading="lazy"><figcaption>Rossy<small>Pubbliche Relazioni</small></figcaption></figure>
+<figure><img src="img/nebbia.jpg" alt="Nebbia" loading="lazy"><figcaption>Nebbia<small>Il cane aziendale</small></figcaption></figure>
+<figure><img src="img/gattini.jpg" alt="Moretta e Fortuna" loading="lazy"><figcaption>Moretta e Fortuna<small>Le ultime arrivate</small></figcaption></figure></div>
+</div></section>
 
 <dialog id="vd"><button class="x" type="button" aria-label="Chiudi">×</button><h3>Introduzione alla Frutteria Bigone</h3><video id="vid" controls preload="none" playsinline poster="media/poster.jpg"></video></dialog>
 
-<section><div class="w two"><div><h2>Chi siamo</h2>
-<p>Siamo un'azienda agricola a conduzione familiare, contadini da diverse generazioni. Produciamo piccoli e grandi frutti, coltiviamo un piccolo orto per la vendita diretta utilizzando la lotta integrata perché crediamo che l'agricoltura debba essere il più possibile sostenibile, ma anche sopperire alle necessità di tutti.</p></div>
-<img src="img/noi.jpg" alt="Noi della Frutteria Bigone durante la raccolta" loading="lazy"></div></section>
+<footer><img src="img/logo.png" alt="" class="flogo">
+<p><a class="btn" href="https://ig.me/m/_frutteria_bigone">Scrivici su Instagram</a></p>
+<p>Via Brodano 16, Vignola (MO) · <a href="https://maps.app.goo.gl/VXBxzUMq6dUhdws88" target="_blank" rel="noopener">Maps</a> · <a href="https://www.instagram.com/_frutteria_bigone/">Instagram</a> · <a href="https://www.facebook.com/frutteriabigone/">Facebook</a></p>
+<p class="note">Società Agricola Bigone · Prodotti della terra</p></footer>
 
-<section id="storia"><div class="w two"><img src="img/storia-trattore.jpg" alt="Foto d'epoca su un trattore" loading="lazy"><div><h2>La nostra storia</h2>
-<p>Siamo agricoltori da generazioni, la famiglia di nostro nonno Franco già possedeva un piccolo fondo. Per lavorare tutti avevano affittato parte della terra, fino a che nostro nonno insieme ai nostri genitori hanno acquistato nel 1989 la casa con la terra che a tutt'ora coltiviamo. Abbiamo poi aggiunto diversi altri poderi presi in affitto tutti in zona Basse di Vignola. Dal 2013 abbiamo fondato la Società Agricola Bigone, nella quale siamo entrate ognuna alla fine del proprio percorso universitario.</p>
-<p>La nostra azienda aderisce al protocollo di <strong>lotta integrata avanzata</strong>, il che significa che utilizziamo i prodotti chimici ma solo quando c'è la necessità dettata da una avversità già riscontrata sul campo (quindi non utilizziamo fitofarmaci a priori).</p>
-<p>Siamo sempre stati soci della Cooperativa Agrintesa, ma da quest'anno abbiamo deciso di avviare un piccolo punto vendita diretto dei nostri prodotti.</p>
-<p><em>Lia e Rossella</em></p><a class="btn" style="background:var(--b);color:#fff" href="#contatti">Contattaci</a></div></div></section>
-
-<section id="team"><div class="w"><h2>Il nostro team</h2><p class="sub">Ecco come è composta la nostra azienda</p>
-<div class="grid team">
-<div class="card"><img src="img/fiore.jpg" alt="Fiore" loading="lazy"><div><h3>Fiore</h3><p>Il Capo</p></div></div>
-<div class="card"><img src="img/robert.jpg" alt="Robert" loading="lazy"><div><h3>Robert</h3><p>Il Tuttofare</p></div></div>
-<div class="card"><img src="img/lia.jpg" alt="Lia" loading="lazy"><div><h3>Lia</h3><p>Il legale rappresentante</p></div></div>
-<div class="card"><img src="img/rossy.jpg" alt="Rossy" loading="lazy"><div><h3>Rossy</h3><p>Pubbliche Relazioni</p></div></div>
-<div class="card"><img src="img/nebbia.jpg" alt="Nebbia" loading="lazy"><div><h3>Nebbia</h3><p>Il cane aziendale</p></div></div>
-<div class="card"><img src="img/gattini.jpg" alt="Moretta e Fortuna" loading="lazy"><div><h3>Moretta e Fortuna</h3><p>Le ultime arrivate</p></div></div>
-</div></div></section>
-
-<section id="frutti"><div class="w"><h2>I nostri frutti</h2><p class="sub">I veri protagonisti del nostro lavoro · <span id="sn"></span>: in cima i frutti di stagione</p>
-<div class="grid">
-<div class="card" data-f="Ciliegie"><img src="img/duroni.jpg" alt="Duroni" loading="lazy"><div><h3>Duroni</h3><p>Dalle varietà più precoci come Early Lory e Bigarreaux, passando per le nuove varietà della famiglia Sweet fino ad arrivare ai più famosi Lapins e Ferrovia, finiamo in bellezza con Sweetheart e Staccato.</p></div></div>
-<div class="card" data-f="Pere"><img src="img/pere-estive.jpg" alt="Pere estive" loading="lazy"><div><h3>Pere estive</h3><p>Le prime pere che raccogliamo, più piccole ma prelibate, fresche e dissetanti: sono Coscia, Santa Maria, Spadoncino.</p></div></div>
-<div class="card" data-f="Prugne"><img src="img/susine.jpg" alt="Susine" loading="lazy"><div><h3>Susine</h3><p>La migliore arma contro la calura estiva: le susine, dolci e dissetanti!</p></div></div>
-<div class="card" data-f="Piccoli frutti"><img src="img/piccoli-frutti.jpg" alt="Piccoli frutti" loading="lazy"><div><h3>Piccoli frutti</h3><p>I più piccoli, ma anche i più importanti per l'alimentazione, oggi li chiamano super food: mirtilli americani, mirtilli rosa, ribes, lamponi, more.</p></div></div>
-<div class="card" data-f="Pere"><img src="img/pere-invernali.jpg" alt="Pere invernali" loading="lazy"><div><h3>Pere invernali</h3><p>Queste sono le ultime pere che raccogliamo, che si riescono a conservare a lungo se tenute in frigo. Sono le pere più dolci: William, Abate Fetel, Conference, Kaiser Alexander.</p></div></div>
-<div class="card" data-f="Kaki"><div class="ph">🍊</div><div><h3>Kaki</h3><p>Loti di Romagna e Rojo Brillante, i kaki tradizionali che si mangiano con il cucchiaino (da assaggiare accompagnati agli amaretti)!! Solo su prenotazione!</p></div></div>
-<div class="card" data-f="Mele"><div class="ph">🍎</div><div><h3>Mele</h3><p>Le mele sono un frutto estivo e invernale, ricche di fibre e vitamina C.</p></div></div>
-<div class="card" data-f="Orto"><img src="img/orto.jpg" alt="Ortaggi dell'orto" loading="lazy"><div><h3>Orto</h3><p>Abbiamo sempre avuto un piccolo orto per il nostro fabbisogno familiare, da quest'anno vorremmo portare anche sulle vostre tavole le nostre verdure preferite!!</p></div></div>
-</div></div></section>
-
-<section id="blog"><div class="w"><h2>Blog</h2><p class="sub">Novità, cataloghi e racconti dal campo</p>
-<div id="posts">
-
-<details open><summary>DEGUSTA VIGNOLA 2026<small>30 marzo</small></summary>
-<p><strong>4° camminata enogastronomica tra i ciliegi in fiore – domenica 12 aprile.</strong></p>
-<p>La passeggiata per ammirare la fioritura dei ciliegi e nel contempo assaggiare prodotti tipici del territorio si svolgerà anche quest'anno, in alcune aziende delle Basse di Vignola, con alcune novità. Da quest'anno si aggiunge la collaborazione di Slow Food, che ha un presidio dedicato alla tutela della Moretta di Vignola, e del Gruppo di documentazione vignolese "Mezaluna".</p>
-<p>Maggiori informazioni: <a href="https://www.visitvignola.it/eventi/de-gusta-vignola-4-edizione/">visitvignola.it</a><br>Iscrizioni: <a href="tel:+393517008797">351 7008797</a> · <a href="mailto:prolocovignola@gmail.com">prolocovignola@gmail.com</a></p></details>
-
-<details><summary>Catalogo di Natale 2024<small>28 novembre 2024 · aggiornato 18 dicembre 2024</small></summary>
-<p>Ecco a voi il nuovo catalogo aggiornato con i prodotti disponibili quest'anno! Seguiteci sui social per avere un'idea visiva di come sono!</p>
-<table>
-<tr><td>Bustine di semi</td><td>€ 2,00</td></tr><tr><td>Sacchettini lavanda</td><td>€ 2,00</td></tr><tr><td>Mele Inored</td><td>€ 2,00/kg</td></tr>
-<tr><td>Bustine aromi (rosmarino, erba Luigia, salvia, melissa, origano, peperoncini)</td><td>€ 2,00</td></tr>
-<tr><td>Mele Inored essiccate</td><td>€ 5,00</td></tr><tr><td>Composte 212 ml (burro di mele e ciliegia dolce)</td><td>€ 5,00</td></tr>
-<tr><td>Succo di mela 720 ml</td><td>€ 5,00</td></tr><tr><td>Kit mela brulè (1 succo, 1 busta di aromi e istruzioni)</td><td>€ 7,00</td></tr>
-<tr><td>Sacchettino aromi per mela brulè</td><td>€ 2,00</td></tr><tr><td>Tisana semplice</td><td>€ 6,00</td></tr>
-<tr><td>Infuso alla frutta (rosa canina, mela, mandarino, karkadè*)</td><td>€ 6,00</td></tr>
-<tr><td>Tisana floreale (tiglio, foglie di mora, erba Luigia, mela)</td><td>€ 6,00</td></tr>
-<tr><td>Sale alla mela</td><td>€ 4,00</td></tr><tr><td>Aglione (rosmarino, aglio, sale*)</td><td>€ 4,00</td></tr>
-<tr><td>Sacchettino legnetti da decorare</td><td>€ 3,00</td></tr><tr><td>Decorazione natalizia</td><td>€ 3,00</td></tr>
-<tr><td>Il miele di Fabio e Mattia* (km 0, via Doccia, Vignola)</td><td>€ 8,00</td></tr></table>
-<p class="note">*prodotti non di nostra produzione</p>
-<p><strong>Confezionamento:</strong> scatolina regalo + € 1,00 · cesta piccola + € 2,00 · cesta grande + € 4,00. Tutti i prodotti si possono combinare per realizzare confezioni regalo su misura! Per qualsiasi domanda o curiosità, siamo a disposizione.</p></details>
-
-<details><summary>Catalogo 2023<small>5 dicembre 2023</small></summary>
-<table>
-<tr><td>Bustine di semi (calendula, girasole, tagete nano)</td><td>€ 1,00</td></tr><tr><td>Lavanda sacchettino</td><td>€ 2,00</td></tr>
-<tr><td>Bustine aromi (rosmarino, erba Luigia, salvia, melissa, origano, peperoncini)</td><td>€ 2,00</td></tr>
-<tr><td>Buste essiccati (mele, mele alla cannella, tarassaco, alloro)</td><td>€ 3,00</td></tr><tr><td>Spugna di luffa</td><td>€ 2,00</td></tr>
-<tr><td>Sapone scrub luffa (glicerina alla lavanda con luffa all'interno)</td><td>€ 5,00</td></tr>
-<tr><td>Composte 212 ml (burro di mele e ciliegia dolce)</td><td>€ 5,00</td></tr><tr><td>Nettare di mela 720 ml</td><td>€ 5,00</td></tr>
-<tr><td>Kit mela brulè (1 succo, 1 busta di aromi e istruzioni)</td><td>€ 7,00</td></tr><tr><td>Zucca spaghetti e violine</td><td>€ 4,00</td></tr>
-<tr><td>Mele Inored e Fuji</td><td>€ 1,00/kg</td></tr><tr><td>Infuso alla frutta "Mangia e bevi"</td><td>€ 8,00</td></tr>
-<tr><td>Tisane (floreale, "Di gamb ed sresa")</td><td>€ 6,00</td></tr><tr><td>Sali aromatizzati</td><td>€ 3,50</td></tr>
-<tr><td>Scatolina con tre sali</td><td>€ 10,00</td></tr><tr><td>Il miele di Fabio e Mattia (km 0, via Doccia, Vignola)</td><td>€ 8,00</td></tr></table>
-<p><strong>Confezionamento:</strong> scatolina regalo + € 1,00 · bauletto chiuso + € 2,00 · cesta grande + € 6,00. Tutti i prodotti si possono combinare per realizzare confezioni regalo su misura!</p></details>
-
-<details><summary>Le novità natalizie 2023<small>24 novembre 2022 · aggiornato 5 dicembre 2023</small></summary>
-<p>Il Natale è già alle porte, e qui in Frutteria abbiamo aggiunto un po' di novità rispetto ai prodotti dello scorso anno.</p>
-<ul><li><strong>Composta di ciliegie</strong> dolce</li>
-<li><strong>Nettare di mele:</strong> succo di mela con polpa, in vaso da 750 ml, prodotto con le nostre mele Inored</li>
-<li><strong>Burro di mele:</strong> composta dolce e vellutata di mele Golden, in vasetto da 212 ml</li>
-<li><strong>Kit Melabrulè:</strong> una bottiglia di succo di mela e un sacchettino di aromi; basta aggiungere 500 ml di acqua e far bollire qualche minuto per ottenere una bevanda calda e speziata, che ricorda il vin brulè!</li>
-<li><strong>Sali aromatizzati:</strong> cacao e peperoncino · ortica e piantaggine · gomasio al finocchio · mela · pomodoro · elicriso</li>
-<li><strong>Tisane:</strong> infuso alla frutta "Mangia&amp;Bevi" (mela, susina, ciliegie, rosa canina) · tisana "Floreale" (fiori di sambuco, elicriso, mela essiccata) · tisana "Di Gamb dal Sresi" (peduncoli di ciliegia, mela, cannella)</li></ul>
-<p>Rimangono come lo scorso anno i prodotti essiccati, le luffe, il miele, mele e zucche, le bustine di semi di fiori, la lavanda. Vi presenteremo i nuovi prodotti in modo più approfondito sui social, restate aggiornati!</p></details>
-
-<details><summary>Aperincampo!!<small>23 maggio 2022</small></summary>
-<p>Abbiamo iniziato la nuova stagione di raccolta della frutta, il nostro punto vendita self-service è di nuovo aperto e ci siamo già lanciati a capofitto nelle nostre piante di ciliegie... ma quest'anno abbiamo pensato per voi a una novità! Per farvi gustare ciliegie freschissime e alcuni dei nostri prodotti lavorati, vi accogliamo tra le piante di ciliegio nel fresco della sera (speriamo) per un aperitivo insieme!</p>
-<p>Speriamo di cuore vi possa piacere la nostra iniziativa!</p></details>
-
-<details><summary>Catalogo Natale 2021<small>11 novembre 2021 · aggiornato 12 novembre 2021</small></summary>
-<p>Scegliete voi come comporre le vostre ceste!</p>
-<table>
-<tr><td>Bustina di semi di fiori</td><td>€ 1,00</td></tr><tr><td>Peperoncini essiccati, 12 g</td><td>€ 2,00</td></tr><tr><td>Sacchettino lavanda essiccata per cassetti</td><td>€ 2,00</td></tr>
-<tr><td>Spugna ecologica di luffa</td><td>€ 3,00</td></tr><tr><td>Zucca spaghetti piccola (con ricetta, per circa 2 persone)</td><td>€ 3,00</td></tr>
-<tr><td>Zucca spaghetti grande (con ricetta, per circa 4 persone)</td><td>€ 4,00</td></tr><tr><td>Succo di ciliegia 200 ml</td><td>€ 3,00</td></tr>
-<tr><td>Composta 314 ml (pere William, susine Black Splendor, ciliegie "la Brusca")</td><td>€ 5,00</td></tr><tr><td>Tris di composte</td><td>€ 15,00</td></tr>
-<tr><td>Zucca a fiasco – capanna per il presepe</td><td>€ 15,00</td></tr><tr><td>Lampada zucca a fiasco (prenotazione 5 giorni prima)</td><td>€ 30,00</td></tr>
-<tr><td>Il miele di Fabio e Mattia, km 0, 350 g (via Doccia, Vignola)</td><td>€ 7,00</td></tr>
-<tr><td>Birra agricola NonSoloSpina km 0, 500 ml (Etherea-ALE, Impavida-IPA)</td><td>€ 7,00</td></tr></table>
-<p><strong>Confezionamento:</strong> prodotto singolo con segnalibro all'uncinetto € 2,00 · cesta piccola € 5,00 (cestino in legno, candela alla ciliegia, segnalibro, pigne, biglietto d'auguri fatto a mano e allestimento) · cesta grande € 6,00 (cesto in legno, candela alla ciliegia, segnalibro, decorazioni natalizie all'uncinetto, pigne, biglietto d'auguri fatto a mano e allestimento).</p>
-<p><strong>Esempi:</strong> composta con segnalibro € 7 · cesta piccola con 1 succo, 1 composta, peperoncino, spugna, zucca piccola € 21 · cesta grande con 1 succo, 2 composte, 1 birra, bustina di semi, 1 miele, lavanda, zucca grande € 40.</p>
-<p>Per qualunque dubbio contattateci e saremo felici di potervi aiutare.</p></details>
-
-<details><summary>Le erbe di campo<small>26 febbraio 2020 · di Lia</small></summary>
-<div class="imgs"><img src="img/erbe1.jpg" alt="Erbe di campo"><img src="img/erbe2.jpg" alt="Erbe di campo"></div>
-<p>Vi è mai capitato di notare signore di una certa età ai bordi delle strade di campagna con delle sporte in mano, chinate a raccogliere erbe? A me hanno sempre incuriosito moltissimo, e guardandole pensavo a tutta la campagna che ho a disposizione piena di piante ed erbe spontanee che per noi sono infestanti e che invece potrebbero essere cibo!</p>
-<p>Questa curiosità mi ha portato a leggere libri per imparare a usare quello che la natura ci offre in modo gratuito, ma ho riscontrato delle difficoltà: oltre alle più conosciute come il tarassaco e le ortiche, come potevo riconoscere con certezza le erbe da un libro? Poi in un corso sulle piante aromatiche ho conosciuto una docente davvero speciale: Beatrice Calia, l'Erbana, una vera esperta di piante selvatiche. Passeggiando con lei abbiamo potuto imparare a riconoscere diverse piante interessanti e soprattutto ottime ricette per gustarle al meglio.</p>
-<p>La prima che ho ritrovato, che in estate è molto presente in tutto il nostro cortile, è la <strong>portulaca</strong>: una succulenta dalle foglie tenerissime, ama il caldo e sopravvive nelle zone di passaggio, è ottima cruda in insalata con pomodori, cetrioli e magari condita con lo yogurt! In mezzo ai filari vedo spesso la <strong>malva</strong>, dai riconoscibili fiori violacei; il <strong>tarassaco</strong> (o dente di leone, da noi "piscialetto"), le cui foglie giovani sono davvero ottime saltate in padella, con aglio e olio. Sul finire dell'estate in mezzo alle grandi piante di pere abate abbiamo tantissima <strong>piantaggine</strong>, ottima cotta da mangiare accompagnata alle lenticchie!</p>
-<p>Tanti sono anche i fiori che si possono mangiare: dalle violette alle primule, passando per calendula, topinambur e acacia... per non parlare del fiore più amato dai bambini: la camomilla!! Ho ancora tante ricette da sperimentare e tante nuove selvatiche da scoprire e da riportare in campo (per quest'anno mi accontento di seminare camomilla e borragine).</p>
-<p><strong>Poche e semplici regole</strong> se pensate di cogliere piante dei campi:</p>
-<ul><li>raccogliere solo le erbe che si consumano, conoscendo il luogo in cui si raccolgono: attenzione a luoghi inquinati, ai possibili fitofarmaci in caso di campi coltivati, ai bordi delle strade e di fossi che potrebbero essere stati diserbati;</li>
-<li>essere assolutamente certi di riconoscere quello che si raccoglie, inizialmente meglio per diretta indicazione di una persona più esperta (internet e i libri non bastano!!).</li></ul></details>
-
-<details><summary>I nostri piccoli frutti<small>18 febbraio 2020 · aggiornato 27 febbraio 2020</small></summary>
-<div class="imgs"><img src="img/pf1.jpg" alt="Piccoli frutti"><img src="img/pf2.jpg" alt="Piccoli frutti"></div>
-<p>La nostra passione per i piccoli frutti è nata con i mirtilli giganti americani: nel 2015 ci è capitata l'occasione di andare in Valtellina a vedere un mirtilleto. Robert è andato e ci ha portato a casa 15 piante di mirtilli già grandi. Sono stati un esperimento: non conoscevamo nessuno che li avesse nelle nostre zone e non sapevamo che problemi avremmo incontrato.</p>
-<p><strong>Come coltivare i piccoli frutti.</strong> Il primo ostacolo era l'acidità del terreno: alla pianta di mirtillo serve un terreno acido e sciolto mentre il nostro è basico e argilloso, quindi abbiamo tenuto i mirtilli in grandi vasi dotati di un impianto d'irrigazione. Tenere le piante in vaso comporta diverse problematiche, ma le abbiamo gestite bene ed ora abbiamo esteso la nostra produzione con grande successo.</p>
-<p>Visto il nostro interesse nascente ci siamo cimentati nella produzione di lamponi, grazie a uno zio che ne aveva in eccesso, perché è una pianta infestante quindi dopo poco tende a fare un grosso cespuglio scomodo da raccogliere. Rossella ha fatto un corso sui piccoli frutti, così abbiamo capito come fare l'impianto e speriamo di vederne presto i frutti. Da allora abbiamo iniziato a cercare altri piccoli frutti altrettanto interessanti:</p>
-<ul><li>i mirtilli siberiani, i primi frutti che raccogliamo, bruschissimi ma ottimi per le salse;</li><li>il ribes, bianco, nero e rosso;</li>
-<li>il jostaberry, incrocio tra ribes nero e uva spina, con un gusto particolare che ricorda il basilico;</li><li>i lamponi rossi e gialli, gusto imbattibile;</li>
-<li>i mirtilli rosa, una rivelazione per l'incredibile dolcezza che fa pensare alla pesca;</li><li>l'uva giapponese, simile a un lampone un po' più acidulo;</li>
-<li>il famosissimo goji (ci asteniamo dai commenti, non lo capiamo);</li><li>i mini kiwi, o meglio actinidia arguta.</li></ul>
-<p>Quest'anno ne abbiamo comprati dei nuovi, ma solo il tempo dirà se sono buoni e se si riescono a coltivare qui da noi: il mojo berry (frutto dell'anno 2017, molto simile al gelso), il sambuco (per fare il famosissimo Hugo), il lampone Black Jewel di colore nero che dovrebbe essere il più dolce e infine l'antica uva spina.</p>
-<p>Questi piccoli frutti hanno grandi proprietà: chi è ricco di vitamina C (come il ribes nero, usato anche in erboristeria), chi di antiossidanti (come i mirtilli), antinfiammatori, sono ottimi per le diete ipocaloriche e come snack spezzafame. Sono fantastici nelle macedonie, nei dolci e anche per fare le marmellate. Non vediamo l'ora di condividerli con voi.</p></details>
-
-<details><summary>Ciliegie o duroni?<small>18 febbraio 2020</small></summary>
-<div class="imgs"><img src="img/cil1.jpg" alt="Ciliegie"><img src="img/cil2.jpg" alt="Ciliegie"><img src="img/cil3.jpg" alt="Ciliegie"><img src="img/cil4.jpg" alt="Ciliegie"><img src="img/cil5.jpg" alt="Ciliegie"></div>
-<p>Ogni volta che porto delle ciliegie a qualcuno questo mi chiede: "Ma sono ciliegie o duroni?"... Domanda difficile! Diciamo che è come se qualcuno chiedesse se Nebbia è un pastore o un cane, uno non esclude l'altro.</p>
-<h3>Moretta di Vignola</h3>
-<p>Un vignolese quando si parla di ciliegie subito pensa alla perfetta ed inimitabile Moretta di Vignola, per noi motivo di grande orgoglio. Subito pensiamo a quelle vecchie foto di piante di dieci metri, con lunghe scale e banconi colmi di ciliegie "da far su" (cernire).</p>
-<h3>Molteplici varietà di ciliegie</h3>
-<p>Nella nostra zona fino a 50 anni fa si producevano Morette, che hanno lo svantaggio di essere tenere quindi molto delicate e inadatte al trasporto, ma estremamente dolci e quindi molto usate nell'industria. Le altre varietà coltivate erano duroni come il nero primo, anellone, nero secondo, con la caratteristica di essere più sodi: furono loro, con l'apertura delle dogane, a essere esportati e a rendere Vignola famosa per le sue ciliegie. Altra varietà antica è il durone della Marca (o marchigiano): quelle dolci ciliegie bianche o con la facciata rosa poco conosciute in Italia ma amate dagli americani, ottime fresche e famose per la conservazione sotto spirito.</p>
-<p>Da qua in avanti sono nate tantissime nuove varietà, dalle primizie che partono a metà maggio alle più tardive che arrivano a fine giugno; ultime arrivate ma già IGP sono la famiglia Sweet inventate dall'Università di Bologna.</p>
-<h3>Quindi sono ciliegie o duroni?</h3>
-<p>Le ciliegie sono tutti quei frutti rossi, neri o bianchi con il picciolo e un unico nocciolo al centro; possono essere divise in duroni o tenerine a seconda di quanto sono sode, infine declinate nelle infinite varietà. Menzione a parte per la famiglia delle ciliegie acide, che sono proprio una specie diversa, come amarene, visciole e marasche. Esempi: la Moretta di Vignola è una ciliegia tenerina; il Marchigiano e la Celeste sono ciliegie duroni.</p>
-<p>Mentre sto scrivendo questo breve articolo è metà febbraio e mi è venuta una voglia incredibile del "temp ed goier", cioè il tempo della raccolta delle ciliegie, quindi di frutta fresca raccolta e mangiata.</p></details>
-</div>
-</div></section>
-
-<section id="contatti"><div class="w two"><div><h2>Dove trovarci</h2>
-<p><strong>Via Brodano 16<br>Vignola (MO) 41058</strong></p>
-<p>✉ <a href="mailto:[email rimossa]">[email rimossa]</a><br>
-Rossella: <a href="tel:[numero rimosso]">[numero rimosso]</a><br>
-Lia: <a href="tel:[numero rimosso]">[numero rimosso]</a></p>
-<p><a class="btn" style="background:var(--b);color:#fff" href="https://www.google.com/maps/search/?api=1&query=Via+Brodano+16+Vignola">Apri su Google Maps</a></p></div>
-<img src="img/noi.jpg" alt="Noi della Frutteria Bigone" loading="lazy"></div></section>
-
-<footer><img src="img/logo.png" alt="" style="height:90px;margin:auto;background:#fff;border-radius:50%;padding:4px">
-<div class="soc"><a href="https://www.instagram.com/_frutteria_bigone/"><img src="img/ig.png" alt="Instagram"></a><a href="https://www.facebook.com/frutteriabigone/"><img src="img/fb.png" alt="Facebook"></a></div>
-<p>Società Agricola Bigone · Prodotti della terra · Vignola (MO)</p></footer>
+<script src="sheet.js"></script>
 <script>
-const SHEET='1xgYUz4A8sXPU6lhXWtXICbGKg9SKU5H1Q1ApiGF2TDw';
-const csvUrl=t=>`https://docs.google.com/spreadsheets/d/${SHEET}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(t)}`;
-// Copia di riserva se il foglio non è raggiungibile
-let FRUTTA=[['Ciliegie',5,7],['Prugne',6,8],['Pere',7,9],['Kaki',9,10],['Kiwi',10,10],['Orto',1,12],['Piccoli frutti',5,7]];
-const MESI={primavera:[3,4,5],estate:[6,7,8],autunno:[9,10,11],inverno:[12,1,2]};
-const $=q=>document.querySelector(q),B=document.body,cap=s=>s[0].toUpperCase()+s.slice(1);
-const mese=()=>new Date().getMonth()+1,cur=()=>Object.keys(MESI).find(s=>MESI[s].includes(mese()));
-const NOMI=['gennaio','febbraio','marzo','aprile','maggio','giugno','luglio','agosto','settembre','ottobre','novembre','dicembre'];
-const inRange=(m,a,f)=>a<=f?m>=a&&m<=f:m>=a||m<=f; // fine < inizio = stagione a cavallo d'anno
-function csv(t){const r=[];let row=[],c='',q=false;for(let i=0;i<t.length;i++){const x=t[i];
- if(q){if(x=='"'){if(t[i+1]=='"'){c+='"';i++}else q=false}else c+=x}
- else if(x=='"')q=true;else if(x==','){row.push(c);c=''}else if(x=='\n'||x=='\r'){if(x=='\r'&&t[i+1]=='\n')i++;row.push(c);r.push(row);row=[];c=''}else c+=x}
- if(c||row.length){row.push(c);r.push(row)}return r}
+const $=q=>document.querySelector(q),B=document.body,H=$('header');
+// Fallback se il foglio non è raggiungibile. Colonne: nome, inizio, fine, emoji.
+let FRUTTA=[['Ciliegie',5,7,'🍒'],['Piccoli frutti',5,7,'🫐'],['Prugne',6,8,'🟣'],['Pere',7,9,'🍐'],['Kaki',9,10,'🟠'],['Kiwi',10,10,'🥝']],ORTO=[];
 let months=[mese()],label=NOMI[mese()-1];
-function show(){const n=name=>{const f=FRUTTA.find(x=>x[0].toLowerCase()==name.toLowerCase());return f&&months.some(m=>inRange(m,f[1],f[2]))};
- document.querySelectorAll('[data-f]').forEach(c=>{const y=n(c.dataset.f);c.classList.toggle('off',!y);c.style.order=y?0:1});
- $('#sn').textContent=cap(label);$('#bl').textContent=cap(B.dataset.s)}
-function season(s,click){B.dataset.s=s;
- document.querySelectorAll('.bg i').forEach(e=>e.classList.toggle('on',e.dataset.s==s));
- document.querySelectorAll('.seasons button').forEach(e=>e.classList.toggle('on',e.dataset.s==s));
- if(click){months=MESI[s];label=s}else{months=[mese()];label=NOMI[mese()-1]}show()}
-document.querySelectorAll('.seasons button').forEach(b=>b.onclick=()=>season(b.dataset.s,true));
-$('#oggi').onclick=()=>season(cur());
-const H=$('header'),shut=()=>{H.classList.remove('open');$('#bg').setAttribute('aria-expanded',false)};
+const quando=(a,f)=>a==1&&f==12?"tutto l'anno":a==f?NOMI[a-1]:`${NOMI[a-1]} – ${NOMI[f-1]}`;
+const fatti=(rows)=>rows.map(r=>[(r[0]||'').trim(),+r[1],+r[2],(r[3]||'').trim()||'●']).filter(r=>r[0]&&r[1]>=1&&r[1]<=12&&r[2]>=1&&r[2]<=12);
+function lista(ul,rows){ul.replaceChildren(...rows.map(r=>({r,on:months.some(m=>inRange(m,r[1],r[2]))})).sort((a,b)=>b.on-a.on).map(({r,on})=>{
+ const li=document.createElement('li'),e=document.createElement('span'),n=document.createElement('b'),q=document.createElement('small');
+ e.className='em'+(r[3]=='●'?' none':'');e.textContent=r[3];n.textContent=r[0];q.textContent=quando(r[1],r[2]);li.append(e,n,q);
+ if(on){const t=document.createElement('i');t.textContent=months.length>1?'In stagione':'Ora';li.append(t)}else li.className='off';return li}))}
+function mostra(){lista($('#frutti'),FRUTTA);lista($('#verdure'),ORTO);$('#orto').hidden=!ORTO.length;
+ $('#sn').textContent=(label==NOMI[mese()-1]?'A ':'In ')+label+(label==NOMI[mese()-1]?': ecco cosa trovate al banchetto.':': ecco cosa trovate in questa stagione.');
+ // Chip nel hero: sempre riferito a oggi
+ const ora=FRUTTA.filter(r=>inRange(mese(),r[1],r[2]));
+ if(ora.length)$('#ora').textContent='Ora al banchetto: '+ora.map(r=>r[3]+' '+r[0]).join(' · ');
+ else{const p=FRUTTA.map(r=>[(r[1]-mese()+12)%12,r]).sort((a,b)=>a[0]-b[0])[0];
+  $('#ora').textContent=p?`La frutta riposa. Si riparte a ${NOMI[p[1][1]-1]}: ${p[1][3]} ${p[1][0]}`:''}}
+function stag(s,click){B.dataset.s=s;document.querySelectorAll('.seasons button').forEach(e=>e.classList.toggle('on',e.dataset.s==s&&click));
+ document.querySelectorAll('.stag figure').forEach(e=>e.classList.toggle('on',e.dataset.s==s));
+ months=click?MESI[s]:[mese()];label=click?s:NOMI[mese()-1];mostra()}
+document.querySelectorAll('.seasons button[data-s]').forEach(b=>b.onclick=()=>stag(b.dataset.s,true));
+$('#oggi').onclick=()=>stag(stagione());
+stag(stagione());
+
+tab('Frutta').then(rows=>{const f=fatti(rows.slice(1));if(f.length){FRUTTA=f;mostra()}
+ // Se manca il tab Orto Google restituisce il primo tab: lo ignoro se è identico a Frutta.
+ return tab('Orto').then(o=>{if(JSON.stringify(o)!=JSON.stringify(rows)){ORTO=fatti(o.slice(1));mostra()}})}).catch(()=>{});
+tab('Blog').then(rows=>posts($('#posts'),rows,3,false)).catch(()=>{$('#posts').innerHTML='<p>Le novità sono sul nostro Instagram.</p>'});
+
+H.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>{H.classList.remove('open');$('#bg').setAttribute('aria-expanded',false)}));
 $('#bg').onclick=()=>$('#bg').setAttribute('aria-expanded',H.classList.toggle('open'));
-document.querySelectorAll('#mn a,#mn button').forEach(e=>e.addEventListener('click',shut));
-season(cur());
-fetch(csvUrl('Frutta')).then(r=>r.ok?r.text():Promise.reject()).then(t=>{
- const rows=csv(t).slice(1).map(r=>[r[0].trim(),+r[1],+r[2]]).filter(r=>r[0]&&r[1]>=1&&r[1]<=12&&r[2]>=1&&r[2]<=12);
- if(rows.length){FRUTTA=rows;show()}}).catch(()=>{});
-// Blog: foglio "Blog" con colonne Titolo | Data | Testo | Link | Titolo link. Se manca, restano gli articoli statici.
-fetch(csvUrl('Blog')).then(r=>r.ok?r.text():Promise.reject()).then(t=>{
- const rows=csv(t);if(!rows.length||rows[0][0].trim().toLowerCase()!='titolo')return;
- const box=$('#posts'),posts=rows.slice(1).filter(r=>r[0]&&r[0].trim()).reverse(),N=5; // ultima riga del foglio = primo articolo
- if(!posts.length)return;
- const els=posts.map((r,i)=>{const d=document.createElement('details'),s=document.createElement('summary'),sm=document.createElement('small');
-  s.append(r[0].trim());sm.textContent=(r[1]||'').trim();s.append(sm);d.append(s);d.open=i==0;d.hidden=i>=N;
-  (r[2]||'').split(/\n+/).filter(p=>p.trim()).forEach(p=>{const e=document.createElement('p');e.textContent=p.trim();d.append(e)});
-  const u=(r[3]||'').trim();if(/^(https?:\/\/|mailto:|tel:)/i.test(u)){const p=document.createElement('p'),a=document.createElement('a');a.href=u;a.textContent=(r[4]||'').trim()||u;if(u[0]=='h'||u[0]=='H'){a.target='_blank';a.rel='noopener'}p.append(a);d.append(p)}return d});
- box.replaceChildren(...els);
- if(els.length>N){const b=document.createElement('button');b.type='button';b.className='btn more';b.textContent=`Mostra tutti gli articoli (${els.length})`;
-  b.onclick=()=>{els.forEach(e=>e.hidden=false);b.remove()};box.append(b)}
-}).catch(()=>{});
 const d=$('#vd'),v=$('#vid');
 $('#play').onclick=()=>{if(!v.src)v.src='media/presentazione.mp4';d.showModal()};
 const stop=()=>{v.pause();d.close()};$('#vd .x').onclick=stop;d.onclick=e=>{if(e.target==d)stop()};d.onclose=()=>v.pause();
