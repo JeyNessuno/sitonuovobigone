@@ -6,13 +6,9 @@
 <meta property="og:description" content="Self-service, sempre aperto.">
 <meta property="og:type" content="website"><meta property="og:url" content="https://jeynessuno.github.io/sitonuovobigone/">
 <meta property="og:image" content="https://jeynessuno.github.io/sitonuovobigone/img/og.jpg">
+<meta name="theme-color" content="#faf6f1">
 <link rel="canonical" href="https://jeynessuno.github.io/sitonuovobigone/">
 <link rel="icon" href="img/favicon.png"><link rel="apple-touch-icon" href="img/apple-touch-icon.png"><link rel="stylesheet" href="style.css"></head><body data-s="">
-
-<header><a href="#home"><img src="img/logo.png" alt="Frutteria Bigone"></a>
-<button id="bg" class="burger" type="button" aria-expanded="false" aria-controls="mn">☰ Menu</button>
-<nav id="mn" aria-label="Menu principale"><a href="#dove">Dove e quando</a><a href="#frutta">Frutta</a><a href="#novita">Novità</a><a href="#storia">Storia</a>
-<a class="ig" href="https://ig.me/m/_frutteria_bigone">Scrivici su Instagram</a></nav></header>
 
 <!-- Per tornare alla foto delle ciliegie: class="hero cherry" (vedi todo.md) -->
 <div class="hero" id="home">
@@ -22,6 +18,7 @@
 </div></div>
 <button class="hb l" type="button" aria-label="Vedi il retro della casa" title="Vedi il retro della casa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg></button>
 <button class="hb r" type="button" aria-label="Vedi il retro della casa" title="Vedi il retro della casa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg></button>
+<a class="down" href="#video" aria-label="Scorri verso il basso"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a>
 <div class="hc">
 <h1><img src="img/titolo.png" alt="Frutteria Bigone"></h1>
 <p class="tag">Il banchetto self-service della frutta di Società Agricola Bigone, a Vignola.</p>
@@ -43,7 +40,7 @@
 
 <section id="frutta"><div class="w"><h2>Frutta di stagione</h2>
 <p class="sub" id="sn" aria-live="polite">Ciliegie, prugne, pere, kaki, kiwi e piccoli frutti: ecco cosa trovate al banchetto, a seconda della stagione.</p>
-<div class="seasons" role="group" aria-label="Scegli la stagione"><button id="oggi" type="button">Oggi</button><button data-s="primavera">Primavera</button><button data-s="estate">Estate</button><button data-s="autunno">Autunno</button><button data-s="inverno">Inverno</button></div>
+<div class="seasons" role="group" aria-label="Scegli la stagione"><button id="oggi" type="button">Oggi</button><button data-s="primavera">🌸 Primavera</button><button data-s="estate">☀️ Estate</button><button data-s="autunno">🍂 Autunno</button><button data-s="inverno">❄️ Inverno</button></div>
 <ul class="list" id="frutti"></ul>
 <div id="orto" hidden><h3>Dall'orto</h3><ul class="list small" id="verdure"></ul></div>
 </div></section>
@@ -59,10 +56,10 @@
 <img src="img/noi.jpg" alt="Noi della Frutteria Bigone durante la raccolta" loading="lazy"></div>
 
 <div class="stag" aria-label="La casa nelle quattro stagioni">
-<figure data-s="primavera"><img src="img/seasons/spring.jpg" alt="La casa in primavera" loading="lazy"><figcaption>Primavera</figcaption></figure>
-<figure data-s="estate"><img src="img/seasons/summer.jpg" alt="La casa in estate" loading="lazy"><figcaption>Estate</figcaption></figure>
-<figure data-s="autunno"><img src="img/seasons/fall.jpg" alt="La casa in autunno" loading="lazy"><figcaption>Autunno</figcaption></figure>
-<figure data-s="inverno"><img src="img/seasons/winter.jpg" alt="La casa in inverno" loading="lazy"><figcaption>Inverno</figcaption></figure></div>
+<button type="button" class="sf" data-s="primavera" aria-pressed="false"><img src="img/seasons/spring.jpg" alt="La casa in primavera" loading="lazy"><span>Primavera</span></button>
+<button type="button" class="sf" data-s="estate" aria-pressed="false"><img src="img/seasons/summer.jpg" alt="La casa in estate" loading="lazy"><span>Estate</span></button>
+<button type="button" class="sf" data-s="autunno" aria-pressed="false"><img src="img/seasons/fall.jpg" alt="La casa in autunno" loading="lazy"><span>Autunno</span></button>
+<button type="button" class="sf" data-s="inverno" aria-pressed="false"><img src="img/seasons/winter.jpg" alt="La casa in inverno" loading="lazy"><span>Inverno</span></button></div>
 
 <div class="team">
 <figure><img src="img/fiore.jpg" alt="Fiore" loading="lazy"><figcaption>Fiore<small>il capo</small></figcaption></figure>
@@ -84,7 +81,7 @@
 
 <script src="sheet.js"></script>
 <script>
-const $=q=>document.querySelector(q),B=document.body,H=$('header');
+const $=q=>document.querySelector(q),B=document.body;
 let FRUTTA=[],ORTO=[]; // niente dati di riserva: meglio un avviso che stagioni vecchie
 let months=[mese()],label=NOMI[mese()-1];
 const quando=(a,f)=>a==1&&f==12?"tutto l'anno":a==f?NOMI[a-1]:`${NOMI[a-1]} – ${NOMI[f-1]}`;
@@ -101,9 +98,10 @@ function mostra(){lista($('#frutti'),FRUTTA);lista($('#verdure'),ORTO);$('#orto'
  else{const p=FRUTTA.map(r=>[(r[1]-mese()+12)%12,r]).sort((a,b)=>a[0]-b[0])[0];
   $('#ora').textContent=p?`La frutta riposa. Si riparte a ${NOMI[p[1][1]-1]}: ${p[1][3]} ${p[1][0]}`:''}}
 function stag(s,click){B.dataset.s=s;document.querySelectorAll('.seasons button').forEach(e=>{const on=click?e.dataset.s==s:e.id=='oggi';e.classList.toggle('on',on&&e.dataset.s==s&&click);e.setAttribute('aria-pressed',on)});
- document.querySelectorAll('.stag figure').forEach(e=>e.classList.toggle('on',e.dataset.s==s));
+ document.querySelectorAll('.stag .sf').forEach(e=>{e.classList.toggle('on',e.dataset.s==s);e.setAttribute('aria-pressed',e.dataset.s==s)});
+ $('meta[name=theme-color]').content=getComputedStyle(B).getPropertyValue('--alt').trim();
  months=click?MESI[s]:[mese()];label=click?s:NOMI[mese()-1];mostra()}
-document.querySelectorAll('.seasons button[data-s]').forEach(b=>b.onclick=()=>stag(b.dataset.s,true));
+document.querySelectorAll('.seasons button[data-s],.stag .sf').forEach(b=>b.onclick=()=>stag(b.dataset.s,true));
 $('#oggi').onclick=()=>stag(stagione());
 stag(stagione());
 
@@ -112,8 +110,6 @@ tab('Frutta').then(rows=>{const f=fatti(rows.slice(1));if(f.length){FRUTTA=f;mos
  return tab('Orto').then(o=>{if(JSON.stringify(o)!=JSON.stringify(rows)){ORTO=fatti(o.slice(1));mostra()}})}).catch(()=>{if(!FRUTTA.length)$('#sn').textContent='Al momento non riusciamo a mostrare le stagioni: trovate tutte le novità su Instagram.'});
 tab('Blog').then(rows=>posts($('#posts'),rows,3,false)).catch(()=>{$('#posts').innerHTML='<p>Le novità sono sul nostro Instagram.</p>'});
 
-H.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>{H.classList.remove('open');$('#bg').setAttribute('aria-expanded',false)}));
-$('#bg').onclick=()=>$('#bg').setAttribute('aria-expanded',H.classList.toggle('open'));
 // Gira la casa: ogni click ruota le foto di 180° (sinistra e destra in versi opposti)
 const hvi=$('.hvi'),facce=[...hvi.children];let ang=0,occupato=false;
 function gira(d){if(occupato)return;occupato=true;ang+=d*180;hvi.style.transform=`rotateY(${ang}deg)`;

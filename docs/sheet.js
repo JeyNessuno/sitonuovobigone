@@ -16,11 +16,14 @@ function csv(t){const r=[];let row=[],c='',q=false;for(let i=0;i<t.length;i++){c
 const tab=name=>fetch(`https://docs.google.com/spreadsheets/d/${SHEET}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(name)}`)
  .then(r=>r.ok?r.text():Promise.reject()).then(csv);
 
-// Data nel foglio: gg/mm/aaaa o aaaa-mm-gg. Cella vuota o illeggibile = nessun limite.
-const giorno=v=>{const s=(v||'').trim();let m=s.match(/^(\d{1,2})[\/.-](\d{1,2})[\/.-](\d{2,4})/),y,mo,d;
- if(m){d=+m[1];mo=+m[2];y=+m[3]<100?2000+ +m[3]:+m[3]}else if(m=s.match(/^(\d{4})-(\d{1,2})-(\d{1,2})/)){y=+m[1];mo=+m[2];d=+m[3]}else return null;
- return new Date(y,mo-1,d)};
-const visibile=r=>{const t=new Date();t.setHours(0,0,0,0);const a=giorno(r[5]),b=giorno(r[6]);return(!a||t>=a)&&(!b||t<=b)};
+// Data nel foglio: gg/mm/aaaa, gg/mm (senza anno = anno corrente) o aaaa-mm-gg. Cella vuota o illeggibile = nessun limite.
+const giorno=v=>{const s=(v||'').trim();let m=s.match(/^(\d{1,2})[\/.-](\d{1,2})(?:[\/.-](\d{2,4}))?$/),y,mo,d,senza=false;
+ if(m){d=+m[1];mo=+m[2];if(m[3])y=+m[3]<100?2000+ +m[3]:+m[3];else{y=new Date().getFullYear();senza=true}}
+ else if(m=s.match(/^(\d{4})-(\d{1,2})-(\d{1,2})/)){y=+m[1];mo=+m[2];d=+m[3]}else return null;
+ const t=new Date(y,mo-1,d);t.senzaAnno=senza;return t};
+const visibile=r=>{const t=new Date();t.setHours(0,0,0,0);const a=giorno(r[5]),b=giorno(r[6]);
+ if(a&&b&&b.senzaAnno&&b<a)b.setFullYear(b.getFullYear()+1); // es. dal 20/12 al 05/01: la fine è l'anno dopo
+ return(!a||t>=a)&&(!b||t<=b)};
 
 // Tab Blog: Titolo | Data | Testo | Link | Titolo link | Dal | Al. L'ultima riga del foglio è il primo articolo.
 function posts(box,rows,n,expandable){

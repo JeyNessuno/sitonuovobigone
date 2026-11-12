@@ -5,7 +5,6 @@ Things not done yet (or deliberately left as they are). The site lives in `docs/
 ## Content to supply
 - [x] **Intro video**: now a YouTube embed (privacy mode, loaded only when the button is pressed; video id `UL_gEU1mOwU`, set in the script at the bottom of `docs/index.html`). The local mp4 files and poster were deleted.
 - [x] **New photos of staff and pets** (Miele, Moretta, Fortuna, Arya added; originals in `assets/team-originals/`).
-- [ ] **Add the chickens** to the team strip (section "La casa Bigone" in `docs/index.html`; images in `docs/img/`).
 - [x] **Hero image**: now the drone photos (front by default, round-arrow buttons flip the photo to the back; `docs/img/house_front_*.webp` / `house_back_*.webp` at 1280, 1920 and 2560 px wide (the browser picks by screen size), full-size originals in `assets/house-originals/`). To go back to the cherry photo, change `class="hero"` to `class="hero cherry"` in `docs/index.html` (one word; the flip photos and arrows hide themselves). Still open: the house sits behind the title/buttons, so consider moving the text if the photos should show more.
 - [ ] Optional: **higher-quality logo** for the app icon (`docs/img/apple-touch-icon.png` and `favicon.png` are made from the 2410 px logo in `assets/`).
 
@@ -28,7 +27,7 @@ The site reads the Google Sheet directly, so after editing it, reload the site a
 - Row 1 of each tab is always treated as the header; a fruit typed in row 1 is lost.
 - A misspelled tab name makes Google return the first tab (wrong data, no error). Tabs: `Frutta`, `Orto`, `Blog`.
 - Months must be numbers 1–12; a row with a bad month is skipped.
-- Blog: `Data` is only display text; `Dal` / `Al` (dd/mm/yyyy) decide when a post shows. Keep both in step by hand.
+- Blog: `Data` is only display text; `Dal` / `Al` decide when a post shows: write `dd/mm/yyyy` or just `dd/mm` (no year = this year; an end earlier than the start counts as next year, e.g. 20/12 → 5/1). The cell may be formatted as a date; the site reads what the sheet displays. Keep both in step by hand.
 - The sheet is read through Google's `gviz` address, which is unofficial. If it ever stops working, switch to File → Share → "Publish to web" (CSV link).
 - Edits can take a few minutes to appear (Google cache, GitHub Pages cache ~10 min).
 - Without JavaScript the fruit list and news are empty (ignored on purpose).
