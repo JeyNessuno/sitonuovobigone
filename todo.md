@@ -3,17 +3,17 @@
 Things not done yet (or deliberately left as they are). The site lives in `docs/` (GitHub Pages: branch `main`, folder `/docs`).
 
 ## Content to supply
-- [ ] **Upload the intro video to YouTube** (unlisted), then send the link. Then: put a YouTube `<iframe>` in the `<dialog id="vd">` in `docs/index.html`, remove the `hidden` attribute from the `#play` button, and drop the `media/presentazione.mp4` line from the script. The mp4 stays out of git (`*.mp4` is in `.gitignore`); keep the 140 MB original (`assets/presentazione.mp4`) backed up on Drive.
-- [ ] **New photos of staff and pets**, and **add the chickens** to the team strip (section "La casa Bigone" in `docs/index.html`; images in `docs/img/`). Current photos are from Wix (2018–2019).
-- [ ] **Tagline** for the hero (the old one was removed; the line under the title is just a description).
-- [ ] **Hero image**: currently the cherry photo. Try the new drone photos of the house when ready (change one path in `docs/style.css`, `.hero`).
+- [x] **Intro video**: now a YouTube embed (privacy mode, loaded only when the button is pressed; video id `UL_gEU1mOwU`, set in the script at the bottom of `docs/index.html`). The local mp4 files and poster were deleted.
+- [x] **New photos of staff and pets** (Miele, Moretta, Fortuna, Arya added; originals in `assets/team-originals/`).
+- [ ] **Add the chickens** to the team strip (section "La casa Bigone" in `docs/index.html`; images in `docs/img/`).
+- [x] **Hero image**: now the drone photos (front by default, round-arrow buttons flip the photo to the back; `docs/img/house_front_*.webp` / `house_back_*.webp` at 1280, 1920 and 2560 px wide (the browser picks by screen size), full-size originals in `assets/house-originals/`). To go back to the cherry photo, change `class="hero"` to `class="hero cherry"` in `docs/index.html` (one word; the flip photos and arrows hide themselves). Still open: the house sits behind the title/buttons, so consider moving the text if the photos should show more.
 - [ ] Optional: **higher-quality logo** for the app icon (`docs/img/apple-touch-icon.png` and `favicon.png` are made from the 2410 px logo in `assets/`).
 
 ## Contacts
 - [ ] **WhatsApp Business link** (`https://wa.me/<number>`) and/or a **form that hides the email** (Formspree / Web3Forms). For now the only contact is the Instagram DM (`https://ig.me/m/_frutteria_bigone`).
 
 ## Decisions pending
-- [ ] **Map and cookie consent.** The Google Maps embed sets Google cookies. Under EU/Italian rules that normally needs consent; the practical risk for a small local shop is low but not zero. Options: keep as is; show a "Mostra la mappa" button that loads the embed on click (the "Apri in Maps" link stays visible); or a cookie banner.
+- [x] **Map and cookie consent**: solved. The map is now a static picture (`docs/img/mappa.jpg`, a capture of the Google embed with its logo and attribution, cropped so the rating card is not shown: Google draws "4.9 ★" with a single star, which looked like a one-star review) that links to Google Maps, so no Google cookies are set. The uncropped capture is in `assets/map-original/`. Recapture only if the area changes.
 - [ ] **Public URL.** `docs/index.html`, `docs/novita/index.html`, `docs/sitemap.xml` and `docs/robots.txt` use `https://jeynessuno.github.io/sitonuovobigone/`. If the address changes (custom domain), update those four files.
 
 ## After deploying

@@ -14,19 +14,31 @@
 <nav id="mn" aria-label="Menu principale"><a href="#dove">Dove e quando</a><a href="#frutta">Frutta</a><a href="#novita">Novità</a><a href="#storia">Storia</a>
 <a class="ig" href="https://ig.me/m/_frutteria_bigone">Scrivici su Instagram</a></nav></header>
 
-<div class="hero" id="home"><div>
+<!-- Per tornare alla foto delle ciliegie: class="hero cherry" (vedi todo.md) -->
+<div class="hero" id="home">
+<div class="hvs"><div class="hvi">
+<img class="hv" src="img/house_front_1920.webp" srcset="img/house_front_1280.webp 1280w, img/house_front_1920.webp 1920w, img/house_front_2560.webp 2560w" sizes="100vw" alt="La casa Bigone vista da davanti" fetchpriority="high">
+<img class="hv dietro" src="img/house_back_1920.webp" srcset="img/house_back_1280.webp 1280w, img/house_back_1920.webp 1920w, img/house_back_2560.webp 2560w" sizes="100vw" decoding="async" alt="La casa Bigone vista da dietro" aria-hidden="true" fetchpriority="low">
+</div></div>
+<button class="hb l" type="button" aria-label="Vedi il retro della casa" title="Vedi il retro della casa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg></button>
+<button class="hb r" type="button" aria-label="Vedi il retro della casa" title="Vedi il retro della casa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg></button>
+<div class="hc">
 <h1><img src="img/titolo.png" alt="Frutteria Bigone"></h1>
-<p class="tag">Il banchetto della frutta di casa Bigone, a Vignola.</p>
+<p class="tag">Il banchetto self-service della frutta di Società Agricola Bigone, a Vignola.</p>
 <p class="chip" id="ora"></p>
 <p><a class="btn" href="https://maps.app.goo.gl/VXBxzUMq6dUhdws88" target="_blank" rel="noopener">Come arrivare</a> <a class="btn ghost" href="#frutta">Cosa c'è ora</a></p>
 </div></div>
+
+<section id="video"><div class="w"><button class="vcard" id="play" type="button" aria-label="Guarda il video: Introduzione alla Frutteria Bigone">
+<img src="img/video.jpg" alt="" loading="lazy"><span class="pb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+<span class="vt">Introduzione alla Frutteria Bigone<small>Guarda il video · 4 minuti</small></span></button></div></section>
 
 <section id="dove"><div class="w two"><div><h2>Dove e quando</h2>
 <p><strong>Via Brodano 16, Vignola (MO) 41058</strong><br>Basse di Vignola, a casa nostra.</p>
 <p>Il banchetto è <strong>self-service e sempre aperto</strong>: passate quando volete, la frutta di stagione vi aspetta.</p>
 <p><a class="btn dark" href="https://maps.app.goo.gl/VXBxzUMq6dUhdws88" target="_blank" rel="noopener">Apri in Maps</a>
 <a class="btn dark" href="https://ig.me/m/_frutteria_bigone"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg> Scrivici su Instagram</a></p></div>
-<iframe class="map" title="Mappa: Frutteria Bigone" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1423.0372583789176!2d11.025185945314687!3d44.493139912635996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477fdf756a911983%3A0x1f0b673e33c49472!2sFrutteria%20Bigone!5e0!3m2!1sen!2sit!4v1794385668316!5m2!1sen!2sit" style="border:0" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+<a class="map" href="https://maps.app.goo.gl/VXBxzUMq6dUhdws88" target="_blank" rel="noopener" aria-label="Apri la mappa di Frutteria Bigone su Google Maps"><img src="img/mappa.jpg" alt="Mappa: Frutteria Bigone, Via Brodano 16, Vignola" loading="lazy"><span>Apri in Google Maps ↗</span></a>
 </div></section>
 
 <section id="frutta"><div class="w"><h2>Frutta di stagione</h2>
@@ -43,9 +55,7 @@
 <div class="two"><div>
 <p>Siamo un'azienda agricola a conduzione familiare, contadini da diverse generazioni: la famiglia di nostro nonno Franco già possedeva un piccolo fondo. Nel 1989 lui e i nostri genitori hanno acquistato la casa con la terra che ancora oggi coltiviamo. La casa si è sempre chiamata <strong>Bigone</strong>, ed è da lei che prende il nome la nostra frutteria.</p>
 <p>Dal 2013 siamo la Società Agricola Bigone: produciamo piccoli e grandi frutti e un piccolo orto, con <strong>lotta integrata avanzata</strong> (usiamo i prodotti chimici solo quando c'è una vera necessità, mai a priori), perché crediamo che l'agricoltura debba essere il più possibile sostenibile. Siamo soci della Cooperativa Agrintesa e da qualche anno vendiamo direttamente anche qui, al banchetto.</p>
-<p><em>Lia e Rossella</em></p>
-<!-- Nascosto finché non c'è il video su YouTube (vedi todo.md): togliere "hidden" -->
-<button class="btn dark" id="play" type="button" hidden>▶ Introduzione alla Frutteria Bigone</button></div>
+<p><em>Lia e Rossella</em></p></div>
 <img src="img/noi.jpg" alt="Noi della Frutteria Bigone durante la raccolta" loading="lazy"></div>
 
 <div class="stag" aria-label="La casa nelle quattro stagioni">
@@ -55,15 +65,17 @@
 <figure data-s="inverno"><img src="img/seasons/winter.jpg" alt="La casa in inverno" loading="lazy"><figcaption>Inverno</figcaption></figure></div>
 
 <div class="team">
-<figure><img src="img/fiore.jpg" alt="Fiore" loading="lazy"><figcaption>Fiore<small>Il Capo</small></figcaption></figure>
-<figure><img src="img/robert.jpg" alt="Robert" loading="lazy"><figcaption>Robert<small>Il Tuttofare</small></figcaption></figure>
-<figure><img src="img/lia.jpg" alt="Lia" loading="lazy"><figcaption>Lia<small>Il legale rappresentante</small></figcaption></figure>
-<figure><img src="img/rossy.jpg" alt="Rossy" loading="lazy"><figcaption>Rossy<small>Pubbliche Relazioni</small></figcaption></figure>
-<figure><img src="img/nebbia.jpg" alt="Nebbia" loading="lazy"><figcaption>Nebbia<small>Il cane aziendale</small></figcaption></figure>
-<figure><img src="img/gattini.jpg" alt="Moretta e Fortuna" loading="lazy"><figcaption>Moretta e Fortuna<small>Le ultime arrivate</small></figcaption></figure></div>
+<figure><img src="img/fiore.jpg" alt="Fiore" loading="lazy"><figcaption>Fiore<small>il capo</small></figcaption></figure>
+<figure><img src="img/robert.jpg" alt="Robert" loading="lazy"><figcaption>Robert<small>il tuttofare</small></figcaption></figure>
+<figure><img src="img/lia.jpg" alt="Lia" loading="lazy"><figcaption>Lia<small>la rappresentante legale</small></figcaption></figure>
+<figure><img src="img/rossy.jpg" alt="Rossy" loading="lazy"><figcaption>Rossy<small>pubbliche relazioni</small></figcaption></figure>
+<figure><img src="img/miele.jpg" alt="Miele" loading="lazy"><figcaption>Miele<small>il cane aziendale</small></figcaption></figure>
+<figure><img src="img/moretta.jpg" alt="Moretta" loading="lazy"><figcaption>Moretta<small>gattina fedele</small></figcaption></figure>
+<figure><img src="img/fortuna.jpg" alt="Fortuna" loading="lazy"><figcaption>Fortuna<small>gattina vagabonda</small></figcaption></figure>
+<figure><img src="img/arya.jpg" alt="Arya" loading="lazy"><figcaption>Arya<small>gatta perennemente offesa</small></figcaption></figure></div>
 </div></section>
 
-<dialog id="vd"><button class="x" type="button" aria-label="Chiudi">×</button><h3>Introduzione alla Frutteria Bigone</h3><video id="vid" controls preload="none" playsinline poster="media/poster.jpg"></video></dialog>
+<dialog id="vd"><button class="x" type="button" aria-label="Chiudi">×</button><h3>Introduzione alla Frutteria Bigone</h3><div class="yt"><iframe id="vid" title="Introduzione alla Frutteria Bigone" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></dialog>
 
 <footer><img src="img/logo.png" alt="" class="flogo">
 <p><a class="btn" href="https://ig.me/m/_frutteria_bigone">Scrivici su Instagram</a></p>
@@ -102,7 +114,18 @@ tab('Blog').then(rows=>posts($('#posts'),rows,3,false)).catch(()=>{$('#posts').i
 
 H.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>{H.classList.remove('open');$('#bg').setAttribute('aria-expanded',false)}));
 $('#bg').onclick=()=>$('#bg').setAttribute('aria-expanded',H.classList.toggle('open'));
+// Gira la casa: ogni click ruota le foto di 180° (sinistra e destra in versi opposti)
+const hvi=$('.hvi'),facce=[...hvi.children];let ang=0,occupato=false;
+function gira(d){if(occupato)return;occupato=true;ang+=d*180;hvi.style.transform=`rotateY(${ang}deg)`;
+ const dietro=Math.abs(Math.round(ang/180))%2==1;
+ facce[0].toggleAttribute('aria-hidden',dietro);facce[1].toggleAttribute('aria-hidden',!dietro);
+ const t=dietro?'Vedi il fronte della casa':'Vedi il retro della casa';document.querySelectorAll('.hb').forEach(e=>{e.setAttribute('aria-label',t);e.title=t});
+ setTimeout(()=>occupato=false,1000)}
+$('.hb.l').onclick=()=>gira(-1);$('.hb.r').onclick=()=>gira(1);
+// Tocco sulla foto (non su link/bottoni): nasconde o mostra titolo, testo e velo scuro
+const hero=$('.hero');hero.addEventListener('click',e=>{if(!e.target.closest('a,button'))hero.classList.toggle('pulito')});
+// Il video di YouTube (modalità privacy, senza cookie) si carica solo quando si preme il bottone.
 const d=$('#vd'),v=$('#vid');
-$('#play').onclick=()=>{if(!v.src)v.src='media/presentazione.mp4';d.showModal()};
-const stop=()=>{v.pause();d.close()};$('#vd .x').onclick=stop;d.onclick=e=>{if(e.target==d)stop()};d.onclose=()=>v.pause();
+$('#play').onclick=()=>{v.src='https://www.youtube-nocookie.com/embed/UL_gEU1mOwU?autoplay=1&rel=0';d.showModal()};
+const stop=()=>{v.removeAttribute('src');d.close()};$('#vd .x').onclick=stop;d.onclick=e=>{if(e.target==d)stop()};d.onclose=()=>v.removeAttribute('src');
 </script></body></html>
