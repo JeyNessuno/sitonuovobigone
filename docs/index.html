@@ -8,7 +8,7 @@
 <meta property="og:image" content="https://jeynessuno.github.io/sitonuovobigone/img/og.jpg">
 <meta name="theme-color" content="#faf6f1">
 <link rel="canonical" href="https://jeynessuno.github.io/sitonuovobigone/">
-<link rel="icon" href="img/favicon.png"><link rel="apple-touch-icon" href="img/apple-touch-icon.png"><link rel="stylesheet" href="style.css"></head><body data-s="">
+<link rel="icon" href="img/favicon.png"><link rel="apple-touch-icon" href="img/apple-touch-icon.png"><link rel="stylesheet" href="style.css?v=1"></head><body data-s="">
 
 <!-- Per tornare alla foto delle ciliegie: class="hero cherry" (vedi todo.md) -->
 <div class="hero" id="home">
@@ -39,10 +39,11 @@
 </div></section>
 
 <section id="frutta"><div class="w"><h2>Frutta di stagione</h2>
-<p class="sub" id="sn" aria-live="polite">Ciliegie, prugne, pere, kaki, kiwi e piccoli frutti: ecco cosa trovate al banchetto, a seconda della stagione.</p>
+<p class="sub" id="sn" aria-live="polite">Frutta e verdura di stagione, composte e altre cose fatte da noi: ecco cosa trovate al banchetto, a seconda della stagione.</p>
 <div class="seasons" role="group" aria-label="Scegli la stagione"><button id="oggi" type="button">Oggi</button><button data-s="primavera">🌸 Primavera</button><button data-s="estate">☀️ Estate</button><button data-s="autunno">🍂 Autunno</button><button data-s="inverno">❄️ Inverno</button></div>
 <ul class="list" id="frutti"></ul>
 <div id="orto" hidden><h3>Dall'orto</h3><ul class="list small" id="verdure"></ul></div>
+<div id="lavorati" hidden><h3>Lavorati</h3><p class="note2">Composte, marmellate e altre cose fatte da noi.</p><ul class="list small" id="lav"></ul></div>
 </div></section>
 
 <section id="novita"><span id="blog"></span><div class="w"><h2>Novità</h2><p class="sub">Eventi, offerte e racconti dal campo</p>
@@ -79,18 +80,16 @@
 <p>Via Brodano 16, Vignola (MO) · <a href="https://maps.app.goo.gl/VXBxzUMq6dUhdws88" target="_blank" rel="noopener">Maps</a> · <a href="https://www.instagram.com/_frutteria_bigone/">Instagram</a> · <a href="https://www.facebook.com/frutteriabigone/">Facebook</a></p>
 <p class="note">Società Agricola Bigone · Prodotti della terra</p></footer>
 
-<script src="sheet.js"></script>
+<script src="sheet.js?v=1"></script>
 <script>
 const $=q=>document.querySelector(q),B=document.body;
-let FRUTTA=[],ORTO=[]; // niente dati di riserva: meglio un avviso che stagioni vecchie
+let FRUTTA=[],ORTO=[],LAV=[]; // niente dati di riserva: meglio un avviso che stagioni vecchie
 let months=[mese()],label=NOMI[mese()-1];
-const quando=(a,f)=>a==1&&f==12?"tutto l'anno":a==f?NOMI[a-1]:`${NOMI[a-1]} – ${NOMI[f-1]}`;
-const fatti=(rows)=>rows.map(r=>[(r[0]||'').trim(),+r[1],+r[2],(r[3]||'').trim()||'●']).filter(r=>r[0]&&r[1]>=1&&r[1]<=12&&r[2]>=1&&r[2]<=12);
 function lista(ul,rows){ul.replaceChildren(...rows.map(r=>({r,on:months.some(m=>inRange(m,r[1],r[2]))})).sort((a,b)=>b.on-a.on).map(({r,on})=>{
  const li=document.createElement('li'),e=document.createElement('span'),n=document.createElement('b'),q=document.createElement('small');
  e.className='em'+(r[3]=='●'?' none':'');e.textContent=r[3];n.textContent=r[0];q.textContent=quando(r[1],r[2]);li.append(e,n,q);
- if(on){const t=document.createElement('i');t.textContent=months.length>1?'In stagione':'Ora';li.append(t)}else{li.className='off';const s=document.createElement('span');s.className='sr';s.textContent='non di stagione';li.append(s)}return li}))}
-function mostra(){lista($('#frutti'),FRUTTA);lista($('#verdure'),ORTO);$('#orto').hidden=!ORTO.length;
+ if(on&&!(r[1]==1&&r[2]==12)){const t=document.createElement('i');t.textContent=months.length>1?'In stagione':'Ora';li.append(t)}else if(!on){li.className='off';const s=document.createElement('span');s.className='sr';s.textContent='non di stagione';li.append(s)}return li}))}
+function mostra(){lista($('#frutti'),FRUTTA);lista($('#verdure'),ORTO);$('#orto').hidden=!ORTO.length;lista($('#lav'),LAV);$('#lavorati').hidden=!LAV.length;
  if(FRUTTA.length)$('#sn').textContent=(label==NOMI[mese()-1]?'A ':'In ')+label+(label==NOMI[mese()-1]?': ecco cosa trovate al banchetto.':': ecco cosa trovate in questa stagione.');
  // Chip nel hero: sempre riferito a oggi
  const ora=FRUTTA.filter(r=>inRange(mese(),r[1],r[2]));
@@ -106,8 +105,9 @@ $('#oggi').onclick=()=>stag(stagione());
 stag(stagione());
 
 tab('Frutta').then(rows=>{const f=fatti(rows.slice(1));if(f.length){FRUTTA=f;mostra()}
- // Se manca il tab Orto Google restituisce il primo tab: lo ignoro se è identico a Frutta.
- return tab('Orto').then(o=>{if(JSON.stringify(o)!=JSON.stringify(rows)){ORTO=fatti(o.slice(1));mostra()}})}).catch(()=>{if(!FRUTTA.length)$('#sn').textContent='Al momento non riusciamo a mostrare le stagioni: trovate tutte le novità su Instagram.'});
+ // Se manca un tab Google restituisce il primo: lo ignoro se è identico a Frutta.
+ const altro=(nome,tutto)=>tab(nome).then(o=>JSON.stringify(o)==JSON.stringify(rows)?[]:fatti(o.slice(1),tutto)).catch(()=>[]);
+ return Promise.all([altro('Orto',false),altro('Lavorati',true)]).then(([o,l])=>{ORTO=o;LAV=l;mostra()})}).catch(()=>{if(!FRUTTA.length)$('#sn').textContent='Al momento non riusciamo a mostrare le stagioni: trovate tutte le novità su Instagram.'});
 tab('Blog').then(rows=>posts($('#posts'),rows,3,false)).catch(()=>{$('#posts').innerHTML='<p>Le novità sono sul nostro Instagram.</p>'});
 
 // Gira la casa: ogni click ruota le foto di 180° (sinistra e destra in versi opposti)

@@ -24,10 +24,11 @@ Things not done yet (or deliberately left as they are). The site lives in `docs/
 
 ## Known and accepted (check after each sheet edit)
 The site reads the Google Sheet directly, so after editing it, reload the site and check the change.
+- Tabs: `Frutta`, `Orto`, `Lavorati` (jams, preserves and other things you make), `Blog`. All three lists use the columns `name | Inizio | Fine | Emoji`. In `Lavorati`, leaving Inizio and Fine empty means all year. Lavorati never appear in the hero line.
 - Row 1 of each tab is always treated as the header; a fruit typed in row 1 is lost.
 - A misspelled tab name makes Google return the first tab (wrong data, no error). Tabs: `Frutta`, `Orto`, `Blog`.
 - Months must be numbers 1–12; a row with a bad month is skipped.
-- Blog: `Data` is only display text; `Dal` / `Al` decide when a post shows: write `dd/mm/yyyy` or just `dd/mm` (no year = this year; an end earlier than the start counts as next year, e.g. 20/12 → 5/1). The cell may be formatted as a date; the site reads what the sheet displays. Keep both in step by hand.
+- Blog: `Data` is only display text; `Dal` / `Al` decide when a post shows. Writing the year (`dd/mm/yyyy`) is best. Without a year it means this year, so a post that crosses New Year (e.g. 20/12 → 5/1) needs the years written, or it may hide too early. Details in `README.md`.
 - The sheet is read through Google's `gviz` address, which is unofficial. If it ever stops working, switch to File → Share → "Publish to web" (CSV link).
 - Edits can take a few minutes to appear (Google cache, GitHub Pages cache ~10 min).
 - Without JavaScript the fruit list and news are empty (ignored on purpose).

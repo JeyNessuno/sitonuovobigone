@@ -1,0 +1,57 @@
+GUIDA PER AGGIORNARE IL SITO	Il sito legge questo foglio: quello che scrivi qui compare sul sito. Non serve toccare altro.
+	
+📌 COME FUNZIONA	
+Cosa legge il sito	I fogli Frutta, Orto, Lavorati e Blog. Ogni volta che qualcuno apre il sito, legge i dati aggiornati.
+Quanto ci mette	Di solito pochi minuti, a volte fino a 10. Se non vedi la modifica, ricarica la pagina.
+Cosa NON si cambia da qui	Foto, indirizzo, storia, squadra, video. Per quelle serve modificare il sito: chiedi a chi lo gestisce.
+Il foglio è pubblico	Chiunque abbia il link può leggerlo. Non scrivere telefoni privati o dati riservati.
+	
+⚠️ REGOLE D'ORO	
+1. Non cambiare i nomi dei fogli	Devono restare esattamente: Frutta, Orto, Lavorati, Blog.
+2. Non cancellare la riga 1	È l'intestazione (i titoli delle colonne): il sito la salta sempre.
+3. Mesi sempre in numeri	Scrivi 5, non maggio.
+4. Non cambiare la condivisione	Deve restare: chiunque abbia il link può visualizzare. Altrimenti il sito non legge più nulla.
+5. Ordine dei fogli	Frutta per primo e Guida per ultimo.
+6. Controlla sempre il sito	Dopo ogni modifica aprilo e verifica che sia cambiato quello che volevi.
+	
+🍒 FRUTTA · 🥕 ORTO · 🫙 LAVORATI	Le tre liste hanno le stesse colonne.
+A · Nome	Obbligatorio. Esempio: Ciliegie
+B · Inizio	Obbligatorio. Il mese in cui inizia, da 1 a 12. Esempio: 5
+C · Fine	Obbligatorio. Il mese in cui finisce, da 1 a 12. Esempio: 7
+D · Emoji	Facoltativo. Se è vuoto il sito mette un pallino. Per frutti senza emoji usa un pallino colorato (🟣 prugne, 🟠 kaki).
+Se manca un mese	In Frutta e Orto la riga non compare sul sito, e nessun errore ti avvisa. Controlla sempre.
+Lavorati: mesi vuoti	Inizio e Fine vuoti = tutto l'anno. Se scrivi solo uno dei due, la riga non compare: scrivi sempre entrambi.
+Tutto l'anno	Inizio 1 e Fine 12.
+Stagione a cavallo d'anno	Inizio 11 e Fine 2 = da novembre a febbraio.
+Numeri dei mesi	1 gennaio · 2 febbraio · 3 marzo · 4 aprile · 5 maggio · 6 giugno · 7 luglio · 8 agosto · 9 settembre · 10 ottobre · 11 novembre · 12 dicembre
+Ordine delle righe	È l'ordine sul sito: metti le ciliegie per prime. I prodotti di stagione salgono comunque in cima.
+Aggiungere o togliere	Aggiungi una riga nuova in fondo. Per togliere un prodotto cancella la riga.
+In cima al sito	La frase «Ora al banchetto» mostra solo la frutta di stagione del mese (non Orto né Lavorati).
+Se la frutta è finita	Il sito scrive da solo «La frutta riposa. Si riparte a…» con il prossimo mese.
+Ogni anno	Ricontrolla i mesi di inizio e fine: il raccolto cambia da un anno all'altro.
+	
+📰 BLOG · novità, eventi, sconti	
+Nuovo post	Aggiungi SEMPRE una riga in fondo: l'ultima riga è la più recente e compare per prima.
+A · Titolo	Obbligatorio.
+B · Data	Facoltativo. È solo un testo accanto al titolo (es. 12 novembre): non decide quando il post compare.
+C · Testo	Il contenuto. Per andare a capo: Ctrl+Invio (Windows) o Cmd+Invio (Mac). Solo testo: niente foto né grassetto.
+D · Link	Facoltativo. Deve iniziare con https://
+E · Titolo link	Facoltativo. Il testo da cliccare. Se è vuoto compare l'indirizzo.
+F · Dal	Facoltativo. Il post compare da questo giorno. Vuoto = subito.
+G · Al	Facoltativo. Il post sparisce dopo questo giorno (quel giorno si vede ancora). Vuoto = resta sempre.
+Come scrivere Dal e Al	Con l'anno: 15/06/2026. Senza anno vale l'anno in corso. Se il post attraversa il capodanno scrivi sempre gli anni.
+Date scritte male	Vengono ignorate e il post resta visibile. Controlla che sparisca davvero.
+Eventi e sconti	Usa Al, così spariscono da soli quando finiscono.
+Dove si vede	Home: ultimi 3 post. Pagina Novità: ultimi 5, poi Mostra tutti. Il link per Instagram è la pagina Novità.
+	
+🔎 SE QUALCOSA NON FUNZIONA	
+Un frutto non compare	Controlla: il nome c'è, Inizio e Fine sono numeri da 1 a 12, sei nel foglio giusto. Poi aspetta qualche minuto.
+Un post non compare	Controlla che ci sia il titolo, che Dal non sia nel futuro e che Al non sia già passato.
+Un post non sparisce	La data in Al è forse scritta male: usa 15/06/2026.
+Il sito dice di guardare Instagram	Controlla la condivisione del foglio e i nomi dei fogli.
+Non vedo la modifica	Aspetta qualche minuto e ricarica con Ctrl+Maiusc+R (Windows) o Cmd+Maiusc+R (Mac).
+	
+✅ DOPO OGNI MODIFICA	
+1	Apri il sito (anche dal telefono) e ricarica la pagina.
+2	Controlla che la modifica ci sia e che quello che doveva sparire sia sparito.
+3	Se dopo 10 minuti non vedi niente, rileggi le regole d'oro.
